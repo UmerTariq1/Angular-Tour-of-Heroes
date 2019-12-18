@@ -1,0 +1,30 @@
+<!-- <div>
+    ID : <span>{{heros.id}} </span>
+</div>
+<div>
+    Name : <span>{{heros.name }}  </span>
+</div>
+
+<div>
+    Here in case you want to change hero's name :
+    <input [(ngModel)] = "hero.name" placeholder="name"/> 
+</div> -->
+<ul class="heroes">
+    <li *ngFor = "let hero of heroes" class="badge">
+        <div (click)="ShowHeroDetails(hero)">
+            <span >
+                ID : {{hero.id}}      
+                <br>
+                Name : {{hero.name}}
+                <br>
+                Power  : {{hero.power}} 
+                <br>
+            </span>
+        </div>
+        <hr>
+    </li>
+</ul>
+<br><br>
+<app-hero-detail [hero]="selected_hero"></app-hero-detail>
+
+
